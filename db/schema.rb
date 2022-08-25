@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_25_200218) do
+ActiveRecord::Schema.define(version: 2022_08_25_200853) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,15 @@ ActiveRecord::Schema.define(version: 2022_08_25_200218) do
     t.boolean "actively_touring"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "record_label_id"
+    t.index ["record_label_id"], name: "index_artists_on_record_label_id"
   end
 
+  create_table "record_labels", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "artists", "record_labels"
 end
