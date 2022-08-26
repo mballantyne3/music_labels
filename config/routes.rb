@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   get '/artists', to: 'artists#index'
   get '/artists/:id', to: 'artists#show'
   get '/record_labels', to: 'record_labels#index'
+  get '/record_labels/:id', to: 'record_labels#show'
 end
