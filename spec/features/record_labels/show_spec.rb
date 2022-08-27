@@ -12,4 +12,13 @@ RSpec.describe 'the record labels show page' do
     expect(page).to have_content("Location: Tennessee")
     expect(page).to have_content("Genre Included:")
   end
+
+  it 'displays the record labels page and the artist count associated with them' do
+    pure_noise = RecordLabel.create!(name: "Pure Noise Records")
+    knocked_loose = pure_noise.artists.create!(name: "Knocked Loose")
+    counter_parts = pure_noise.artists.create!(name: "Counterparts")
+    visit "record_labels/#{pure_noise.id}"
+
+    expect(page).to have_content("Artist Count: 2")
+  end
 end
