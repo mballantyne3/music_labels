@@ -1,0 +1,14 @@
+<h1>Artists of <%= @record_label.name %></h1>
+<ul>
+  <% @artists.each do |artist| %>
+  <li style="padding-bottom: 15px">
+    <%= artist.name %>
+    <br />
+    Member Count: <%= artist.member_count %>
+    <br />
+    Album Count: <%= artist.album_count %>
+    <br />
+    Actively Touring: <%= artist.actively_touring %>
+  </li>
+  <% end %>
+</ul>
