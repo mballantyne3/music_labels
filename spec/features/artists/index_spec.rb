@@ -15,12 +15,8 @@ RSpec.describe 'the artists index page' do
     expect(page).to have_content(artist1.album_count)
     expect(page).to have_content(artist2.album_count)
     expect(page).to have_content("Actively Touring: true")
-
   end
 
-  # As a visitor
-  # When I visit any page on the site
-  # Then I see a link at the top of the page that takes me to the Child Index
   it 'displays a link on any page that takes user to the artists index' do
     record1 = RecordLabel.create!(name: "Pure Noise Records")
     artist1 = Artist.create!(name: "Knocked Loose", member_count: 5, album_count:4, actively_touring: true, record_label_id: record1.id)
