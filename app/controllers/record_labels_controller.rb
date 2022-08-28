@@ -12,7 +12,11 @@ class RecordLabelsController < ApplicationController
   end
 
   def create
-    record_label = RecordLabel.create(name: params[:name], revenue: params[:revenue], location: params[:location])
+    record_label = RecordLabel.create(record_label_params)
     redirect_to "/record_labels"
+  end
+
+  def record_label_params
+    params.permit(:name, :revenue, :location)
   end
 end
