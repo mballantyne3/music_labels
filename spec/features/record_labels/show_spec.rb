@@ -22,9 +22,6 @@ RSpec.describe 'the record labels show page' do
     expect(page).to have_content("Artist Count: 2")
   end
 
-  # As a visitor
-  # When I visit a parent show page ('/parents/:id')
-  # Then I see a link to take me to that parent's `child_table_name` page ('/parents/:id/child_table_name')
   it 'displays a link to take user to the record labels artists page' do
     pure_noise = RecordLabel.create!(name: "Pure Noise Records")
     knocked_loose = pure_noise.artists.create!(name: "Knocked Loose")

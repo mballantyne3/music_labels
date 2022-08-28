@@ -1,0 +1,9 @@
+<%= form_with url: '/record_labels', method: :post, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%= form.label :revenue %>
+  <%= form.text_field :revenue %>
+  <%= form.label :location %>
+  <%= form.text_field :location %>
+  <%= form.submit "Create Record Label" %>
+<% end %>
