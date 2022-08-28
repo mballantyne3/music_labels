@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   post '/record_labels', to: 'record_labels#create'
   get '/record_labels/:id', to: 'record_labels#show'
   get '/record_labels/:id/artists', to: 'record_labels_artists#index'
+  get '/record_labels/:id/edit', to: 'record_labels#edit'
+  patch '/record_labels/:id', to: 'record_labels#update'
 end

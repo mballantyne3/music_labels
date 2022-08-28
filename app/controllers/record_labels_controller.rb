@@ -16,6 +16,17 @@ class RecordLabelsController < ApplicationController
     redirect_to "/record_labels"
   end
 
+
+  def edit
+    @record_label = RecordLabel.find(params[:id])
+  end
+
+  def update
+    record_label = RecordLabel.find(params[:id])
+    record_label.update(record_label_params)
+    redirect_to "/record_labels/#{record_label.id}"
+  end
+
   def record_label_params
     params.permit(:name, :revenue, :location)
   end
