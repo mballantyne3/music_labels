@@ -1,0 +1,11 @@
+<%= form_with url: "/artists/#{@artist.id}", method: :patch, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%= form.label :member_count %>
+  <%= form.text_field :member_count %>
+  <%= form.label :album_count %>
+  <%= form.text_field :album_count %>
+  <%= form.label :actively_touring %>
+  <%= form.text_field :actively_touring %>
+  <%= form.submit 'Submit' %>
+<% end %>
