@@ -5,3 +5,4 @@
 <p>Location: <%= @record_label.location %></p>
 <p>Genre Included: <%= @record_label.genre_included %></p>
 <p>Artist Count: <%= @artist_count %></p>
+<p><%= link_to "Update #{@record_label.name}", "/record_labels/#{@record_label.id}/edit" %></p>
