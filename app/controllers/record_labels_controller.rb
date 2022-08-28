@@ -27,7 +27,9 @@ class RecordLabelsController < ApplicationController
     redirect_to "/record_labels/#{record_label.id}"
   end
 
+  private
   def record_label_params
     params.permit(:name, :revenue, :location)
   end
 end
+

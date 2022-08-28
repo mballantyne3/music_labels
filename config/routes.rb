@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   get '/record_labels/:id/artists', to: 'record_labels_artists#index'
   get '/record_labels/:id/edit', to: 'record_labels#edit'
   patch '/record_labels/:id', to: 'record_labels#update'
+  get '/record_labels/:id/artists/new', to: 'record_labels_artists#new'
 end

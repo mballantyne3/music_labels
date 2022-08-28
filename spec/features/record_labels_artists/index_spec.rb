@@ -30,4 +30,33 @@ RSpec.describe 'record labels artist index' do
       expect(page).to have_content("Actively Touring: #{@counterparts.actively_touring}")
     end
   end
+
+  it 'links to the add new artists page for that record label' do
+    record_label = RecordLabel.create!(name: 'Sumerian Records')
+
+    visit "/record_labels/#{record_label.id}/artists"
+
+    click_link "Create Artist"
+
+    expect(current_path).to eq("/record_labels/#{record_label.id}/artists/new")
+  end
+
+  it 'can add a new artist to the record label' do
+    record_label = RecordLabel.create!(name: 'Pure Noise Records')
+
+    visit "/record_labels/#{record_label.id}/artists/new"
+
+    fill_in('Name', with: "The Story So Far")
+    fill_in('Member count', with: 5)
+    fill_in('Album count', with: 4)
+    fill_in('Actively touring', with: true)
+
+    click_button 'Create Artist'
+
+    expect(current_path).to eq("/record_labels/#{record_label.id}/artists")
+    expect(page).to have_content("The Story So Far")
+    expect(page).to have_content('Member Count: 5')
+    expect(page).to have_content('Album Count: 4')
+    expect(page).to have_content('Actively Touring: true')
+  end
 end
