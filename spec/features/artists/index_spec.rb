@@ -39,9 +39,6 @@ RSpec.describe 'the artists index page' do
     expect(current_path).to eq("/artists")
   end
 
-  # As a visitor
-  # When I visit the child index
-  # Then I only see records where the boolean column is `true`
   it 'only displays records with `true` actively touring' do
     record_label1= RecordLabel.create!(name: "Pure Noise Records")
     touring_artist1 = record_label1.artists.create!(name: "Knocked Loose", actively_touring: true)
