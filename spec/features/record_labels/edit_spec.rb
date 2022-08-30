@@ -26,17 +26,12 @@ RSpec.describe 'record label update/edit' do
     expect(page).to have_content('Pure Noise Records')
   end
 
-  #   As a visitor
-  #   When I visit the parent index page
-  #   Next to every parent, I see a link to edit that parent's info
-  # When I click the link
-  # I should be taken to that parent's edit page where I can update its information just like in User Story 12
   it 'allows user to edit the record labels info from record labels page' do
-    record1 = RecordLabel.create!(name: "Pure Noise Records")
+    record_label = RecordLabel.create!(name: "Pure Noise Records")
 
     visit "/record_labels"
-    click_button "Edit #{record1.name}"
+    click_link "Edit #{record_label.name}"
 
-    expect(current_path).to eq("record_labels/#{record_label.id}/edit")
+    expect(current_path).to eq("/record_labels/#{record_label.id}/edit")
   end
 end
