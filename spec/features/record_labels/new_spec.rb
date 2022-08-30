@@ -12,6 +12,7 @@ RSpec.describe 'the Record Label creation' do
     fill_in('Name', with: 'Pure Noise Records')
     fill_in('Revenue', with: 1500000)
     fill_in('Location', with: 'Tennessee')
+    select('Yes', from: 'Employee owned')
 
     click_button('Create Record Label')
 

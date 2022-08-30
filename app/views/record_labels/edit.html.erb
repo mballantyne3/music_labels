@@ -5,5 +5,11 @@
   <%= form.text_field :revenue %>
   <%= form.label :location %>
   <%= form.text_field :location %>
+  <label for="employee_owned">Employee Owned:</label>
+  <select id="employee_owned" name="Employee Owned">
+    <option value="NULL">Choose...</option>
+    <option value="true">Yes</option>
+    <option value="false">No</option>
+  </select>
   <%= form.submit 'Submit' %>
 <% end %>

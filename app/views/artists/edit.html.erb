@@ -6,6 +6,10 @@
   <%= form.label :album_count %>
   <%= form.text_field :album_count %>
   <%= form.label :actively_touring %>
-  <%= form.text_field :actively_touring %>
+  <%= form.select :actively_touring, [
+    ["Choose...", "NULL"],
+    ["Yes", "true"],
+    ["No", "false"],
+  ] %>
   <%= form.submit 'Submit' %>
 <% end %>

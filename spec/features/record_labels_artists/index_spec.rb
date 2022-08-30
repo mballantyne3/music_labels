@@ -49,7 +49,7 @@ RSpec.describe 'record labels artist index' do
     fill_in('Name', with: "The Story So Far")
     fill_in('Member count', with: 5)
     fill_in('Album count', with: 4)
-    fill_in('Actively touring', with: true)
+    select('Yes', from: 'Actively touring')
 
     click_button 'Create Artist'
 

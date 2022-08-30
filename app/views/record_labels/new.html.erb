@@ -5,5 +5,11 @@
   <%= form.text_field :revenue %>
   <%= form.label :location %>
   <%= form.text_field :location %>
+  <%= form.label :employee_owned %>
+  <%= form.select :employee_owned, [
+    ["Choose...", "NULL"],
+    ["Yes", "true"],
+    ["No", "false"],
+  ] %>
   <%= form.submit "Create Record Label" %>
 <% end %>

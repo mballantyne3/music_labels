@@ -25,11 +25,12 @@ RSpec.describe 'artist update/edit' do
     fill_in('Name', with: "Counterparts")
     fill_in('Member count', with: 4)
     fill_in('Album count', with: 5)
-    fill_in('Actively touring', with: true)
+    select('Yes', from: 'Actively touring')
     click_button 'Submit'
 
     expect(current_path).to eq("/artists/#{artist1.id}")
     expect(page).to have_content('Counterparts')
+    expect(page).to have_content('Actively Touring: true')
   end
 
   it 'allows user to edit the artists info from the artists page' do
