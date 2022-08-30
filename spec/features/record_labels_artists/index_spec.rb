@@ -59,4 +59,22 @@ RSpec.describe 'record labels artist index' do
     expect(page).to have_content('Album Count: 4')
     expect(page).to have_content('Actively Touring: true')
   end
+
+  it 'can sort artists in alphabetical order' do
+    record_label = RecordLabel.create!(name: "Pure Noise Records")
+    artist1 = record_label.artists.create!(name: "Spiritbox")
+    artist2 = record_label.artists.create!(name: "Knocked Loose")
+    artist3 = record_label.artists.create!(name: "Counterparts")
+
+    visit "/record_labels/#{record_label.id}/artists"
+
+    expect {
+      click_link 'Sort Artists Alphabetically'
+    }.to change {
+      page.all('.artist-name').map(&:text)
+    }.from([artist1.name, artist2.name, artist3.name])
+     .to([artist3.name, artist2.name, artist1.name])
+
+    expect(current_path).to eq("/record_labels/#{record_label.id}/artists")
+  end
 end

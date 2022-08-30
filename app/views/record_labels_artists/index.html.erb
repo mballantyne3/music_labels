@@ -5,7 +5,7 @@
 <ul>
   <% @artists.each do |artist| %>
   <li style="padding-bottom: 15px">
-    <%= artist.name %>
+    <span class="artist-name"><%= artist.name %></span>
     <br />
     Member Count: <%= artist.member_count %>
     <br />
@@ -15,3 +15,4 @@
   </li>
   <% end %>
 </ul>
+<p><a href="/record_labels/<%= @record_label.id %>/artists?sort=name">Sort Artists Alphabetically</a></p>

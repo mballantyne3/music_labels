@@ -3,6 +3,7 @@ class RecordLabelsArtistsController < ApplicationController
   def index
     @record_label = RecordLabel.find(params[:id])
     @artists = @record_label.artists
+    @artists = @artists.order(params[:sort]) if params[:sort].present?
   end
 
   def new
