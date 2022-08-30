@@ -13,6 +13,7 @@
     <tr>
       <td><%= label.name %></td>
       <td><%= label.created_at %></td>
+      <td><%= link_to "Edit #{label.name}", "/record_labels/#{label.id}/edit" %></td>
     </tr>
     <% end %>
 <p><%= link_to "New Record Label", "/record_labels/new" %></p>
