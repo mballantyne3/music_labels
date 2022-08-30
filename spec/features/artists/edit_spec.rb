@@ -31,4 +31,15 @@ RSpec.describe 'artist update/edit' do
     expect(current_path).to eq("/artists/#{artist1.id}")
     expect(page).to have_content('Counterparts')
   end
+
+  it 'allows user to edit the artists info from the artists page' do
+    record1 = RecordLabel.create!(name: 'Pure Noise Records')
+    artist1 = record1.artists.create!(name: 'Counterparts', actively_touring: true)
+
+    visit "/artists"
+
+    click_link "Edit #{artist1.name}"
+
+    expect(current_path).to eq("/artists/#{artist1.id}/edit")
+  end
 end

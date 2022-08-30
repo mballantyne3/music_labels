@@ -6,4 +6,5 @@
   <p>Member Count: <%= artist.member_count %></p>
   <p>Album Count: <%= artist.album_count %></p>
   <p>Actively Touring: <%= artist.actively_touring %></p>
+  <p><%= link_to "Edit #{artist.name}", "/artists/#{artist.id}/edit" %></p>
 <% end %>
