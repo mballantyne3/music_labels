@@ -1,9 +1,13 @@
 <h1><%= @record_label.name %></h1>
-<p><a href="/record_labels/<%= @record_label.id %>/artists"><%= @record_label.name %> Artists</a></p>
-<p><a href="/artists">Artists</a></p>
-<p><a href="/record_labels">Record Labels</a></p>
+<p>
+  <a href="/record_labels/<%= @record_label.id %>/artists"><%= @record_label.name %> Artists</a>
+  |
+  <a href="/artists">Artists</a>
+  |
+  <a href="/record_labels">Record Labels</a>
+</p>
 <p>Revenue: <%= @record_label.revenue %></p>
 <p>Location: <%= @record_label.location %></p>
 <p>Employee Owned: <%= !!@record_label.employee_owned %></p>
 <p>Artist Count: <%= @artist_count %></p>
-<p><%= link_to "Update #{@record_label.name}", "/record_labels/#{@record_label.id}/edit" %></p>
+<p><%= link_to "Update #{@record_label.name}", "/record_labels/#{@record_label.id}/edit", class: "btn btn-outline-dark btn-sm" %></p>
