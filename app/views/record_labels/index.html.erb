@@ -11,12 +11,13 @@
     <tr>
       <th>Name</th>
       <th>Created</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <% @record_labels.each do |label| %>
     <tr>
-      <td><%= label.name %></td>
+      <td><%= link_to label.name, "/record_labels/#{label.id}" %></td>
       <td><%= label.created_at %></td>
       <td><%= link_to "Edit #{label.name}", "/record_labels/#{label.id}/edit", class: "btn btn-outline-dark btn-sm" %></td>
     </tr>

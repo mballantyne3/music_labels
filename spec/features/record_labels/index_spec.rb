@@ -47,4 +47,13 @@ RSpec.describe 'the record labels index page' do
       expect(page).to have_content(record2.created_at)
     end
   end
+
+  it 'links the title of the record label to its page' do
+    record1 = RecordLabel.create!(name: 'Sumerian')
+
+    visit "/record_labels"
+    click_link "#{record1.name}"
+
+    expect(current_path).to eq("/record_labels/#{record1.id}")
+  end
 end
