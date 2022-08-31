@@ -21,4 +21,4 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+Schema design link: https://dbdesigner.page.link/LnSVnzXN8tVZe1iC9
