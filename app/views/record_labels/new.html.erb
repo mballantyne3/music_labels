@@ -1,15 +1,19 @@
-<%= form_with url: '/record_labels', method: :post, local: true do |form| %>
-  <%= form.label :name %>
-  <%= form.text_field :name %>
-  <%= form.label :revenue %>
-  <%= form.text_field :revenue %>
-  <%= form.label :location %>
-  <%= form.text_field :location %>
-  <%= form.label :employee_owned %>
-  <%= form.select :employee_owned, [
-    ["Choose...", "NULL"],
-    ["Yes", "true"],
-    ["No", "false"],
-  ] %>
-  <%= form.submit "Create Record Label" %>
-<% end %>
+<div class="container">
+  <div class="col-6 mx-auto">
+    <%= form_with url: '/record_labels', method: :post, local: true do |form| %>
+      <%= form.label :name %>
+      <%= form.text_field :name, class: 'form-control' %>
+      <%= form.label :revenue %>
+      <%= form.text_field :revenue, class: 'form-control' %>
+      <%= form.label :location %>
+      <%= form.text_field :location, class: 'form-control' %>
+      <%= form.label :employee_owned %>
+      <%= form.select :employee_owned, [
+        ["Choose...", "NULL"],
+        ["Yes", "true"],
+        ["No", "false"],
+      ], {}, class: 'form-select' %>
+      <%= form.submit "Create Record Label", class: 'btn btn-primary mt-3' %>
+    <% end %>
+  </div>
+</div>

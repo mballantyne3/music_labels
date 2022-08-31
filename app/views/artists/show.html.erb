@@ -1,7 +1,10 @@
 <h1><%= @artist.name %></h1>
-<p><a href="/artists">Artists</a></p>
-<p><a href="/record_labels">Record Labels</a></p>
+<p>
+  <a href="/artists">Artists</a>
+  |
+  <a href="/record_labels">Record Labels</a>
+</p>
 <p>Member Count: <%= @artist.member_count %></p>
 <p>Album Count: <%= @artist.album_count %></p>
 <p>Actively Touring: <%= !!@artist.actively_touring %></p>
-<%= link_to "Update #{@artist.name}", "/artists/#{@artist.id}/edit" %>
+<%= link_to "Update #{@artist.name}", "/artists/#{@artist.id}/edit", class: "btn btn-outline-dark btn-sm" %>

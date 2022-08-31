@@ -1,15 +1,20 @@
-<%= form_with url: "/artists/#{@artist.id}", method: :patch, local: true do |form| %>
-  <%= form.label :name %>
-  <%= form.text_field :name %>
-  <%= form.label :member_count %>
-  <%= form.text_field :member_count %>
-  <%= form.label :album_count %>
-  <%= form.text_field :album_count %>
-  <%= form.label :actively_touring %>
-  <%= form.select :actively_touring, [
-    ["Choose...", "NULL"],
-    ["Yes", "true"],
-    ["No", "false"],
-  ] %>
-  <%= form.submit 'Submit' %>
-<% end %>
+<div class="container">
+  <div class="col-6 mx-auto">
+    <%= form_with url: "/artists/#{@artist.id}", method: :patch, local: true do |form| %>
+      <%= form.label :name %>
+      <%= form.text_field :name, class: 'form-control' %>
+      <%= form.label :member_count %>
+      <%= form.text_field :member_count, class: 'form-control' %>
+      <%= form.label :album_count %>
+      <%= form.text_field :album_count, class: 'form-control' %>
+      <%= form.label :actively_touring %>
+      <%= form.select :actively_touring, [
+        ["Choose...", "NULL"],
+        ["Yes", "true"],
+        ["No", "false"],
+      ], {}, class: 'form-select' %>
+      <%= form.submit 'Submit', class: 'btn btn-primary mt-3' %>
+    <% end %>
+  </div>
+</div>
+

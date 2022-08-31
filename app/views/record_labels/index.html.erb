@@ -1,7 +1,12 @@
 <h1>Record Labels</h1>
-<p><a href="/artists">Artists</a></p>
-<p><a href="/record_labels">Record Labels</a></p>
-<table>
+<p>
+  <a href="/artists">Artists</a>
+  |
+  <a href="/record_labels">Record Labels</a>
+  |
+  <a href="/record_labels/new">New Record Label</a>
+</p>
+<table class="table">
   <thead>
     <tr>
       <th>Name</th>
@@ -13,9 +18,8 @@
     <tr>
       <td><%= label.name %></td>
       <td><%= label.created_at %></td>
-      <td><%= link_to "Edit #{label.name}", "/record_labels/#{label.id}/edit" %></td>
+      <td><%= link_to "Edit #{label.name}", "/record_labels/#{label.id}/edit", class: "btn btn-outline-dark btn-sm" %></td>
     </tr>
     <% end %>
-<p><%= link_to "New Record Label", "/record_labels/new" %></p>
   </tbody>
 </table>
